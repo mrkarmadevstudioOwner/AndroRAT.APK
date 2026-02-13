@@ -22,9 +22,11 @@ class AuthRepositoryImpl @Inject constructor(
             
             if (response.isSuccessful) {
                 val data = response.body()
-                // In a real app, you would extract the token from the response
-                // and save it to SharedPreferences
-                saveAuthToken("dummy_token_for_demo")
+                // TODO: Extract token from response body
+                // Example: val token = (data as? Map<*, *>)?.get("token") as? String
+                // For now, this is a placeholder that should be implemented
+                // when integrating with a real API
+                // saveAuthToken(token)
                 Resource.Success(data ?: "Login successful")
             } else {
                 Resource.Error("Login failed: ${response.message()}")

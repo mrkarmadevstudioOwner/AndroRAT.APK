@@ -11,7 +11,7 @@ object RetrofitClient {
     private const val BASE_URL = "https://api.lunex.com/"
     
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
-        level = HttpLoggingInterceptor.Level.BODY
+        level = HttpLoggingInterceptor.Level.NONE // Can be configured per environment
     }
     
     private val okHttpClient = OkHttpClient.Builder()
